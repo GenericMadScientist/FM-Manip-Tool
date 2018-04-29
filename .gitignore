@@ -1,0 +1,9 @@
+# Build folders
+build-debug/
+build-profile/
+build-release/
+
+# Exclude sqlite3
+lib/
+
+*.user

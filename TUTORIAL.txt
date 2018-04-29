@@ -1,0 +1,130 @@
+I'm going to assume you've watched GFC's RNG manipulation tutorial using the
+Python scripts; if not, go to https://youtu.be/DnSmCXphfeA and watch it. I'm
+also going to assume you understand everything he says in it. You'll want to be
+able to use the script since it does some things this program doesn't take care
+of.
+
+Once you open the program you'll see three tabs. I'll go over each of them in
+turn. The three parts are completely independent and you only need to read the
+sections for the parts you're interested in.
+
+Easy mode finder
+================
+
+This allows you to find duels where the AI doesn't play certain cards in the
+first few turns. The script is better for finding this information and you
+should probably just skip this section.
+
+You pick a duelist, a range of seeds to look in, cards you don't want them to
+play, and a number of turns they must not play them. The range of seeds can be
+at most 10000 long at a time. So say you want to look for easy Seto 3rd duels
+from seeds 200 to 8000. You pick Seto 3rd as the opponent, 200 as the starting
+seed, and 7801 for the number of seeds. Then you untick the cards you do not
+want him to play, and beneath that specify for how many turns he must not play
+them. Then you click 'Find easy modes'.
+
+In the 'Easy modes' column you get a list of seeds matching your conditions.
+If there are no matches, the 'Enemy plays' box will say 'No decks found'. You
+can then click on a matching seed in 'Easy modes', and see what the AI will play
+throughout the duel, assuming you never let them fuse or play magics until they
+run out of monsters.
+
+NOTES: Once it gets to the magics, the list of enemy plays can become imperfect.
+Also if you are duelling one of the low mages or Neku and the field is not of
+their type, they might change it back in contradiction to the prediction. The
+script has this flaw too. Finally, this part doesn't have Duel Master K as an
+option.
+
+Manip finder
+============
+
+This is the part most people will want. It is more flexible at finding drops
+than the script, and makes manipping SA Tec drops much easier. The difference
+with the script is that the script method specifies the desired duel and then
+looks for a seed to match, whereas this takes a given seed and tries to make it
+work. The script approach is in my view easier and more useful for a casual
+wanting to get SA Pow or BCD drops, but speedrunners and people wanting to manip
+SA Tec drops will find this useful.
+
+You will want to find a good seed to try getting your chosen drop on and how to
+draw the cards you want using the script and the method shown by GFC in his
+video. Once you have that, enter the appropriate duelist, rank, desired drop,
+and starting seed. Leave 'From duel start?' ticked; if anyone really struggles
+to get a drop and is looking for another way to make a seed work then I can
+write on what that does and how it can help.
+
+Now you need to specify what happens in a duel that affects the RNG. The events
+available to you are on the left just below the 'From duel start?' checkbox.
+When you click on one of these buttons, you'll see a line get added to the
+'Choices' column. You can click on what's in there to change options for
+everything that happens. You can also click on one and then press the Delete
+button to remove it.
+
+The options for an event will appear in the Options box. Hopefully they're
+self-explanatory enough. One note is anything that asks about if an event is
+needed is asking if you must do it or if you can choose to do it or not, e.g.,
+activating a field spell when you've used enough to get an A Tec.
+
+Once your events and options are all set up you click 'Find manip' and in the
+'Fastest manip' box the program will tell you the fastest way to play a duel
+that gives you the desired drop. There may not be a possible way to play a duel
+given the options you've provided, in which case it will instead say 'No manip
+found'.
+
+One note here, it may ask you to do a 'spawn 3d battle'. This means that you
+start a 3d battle, but instead of quitting immediately you quit when the circles
+appear before your monster appears. The timing window is massive for this, you
+have until the actual attack animation starts.
+
+The program will also say what seed the duel ends on. This can be useful if
+you want to set up a chain where you manip for multiple duels in a row. This is
+only really useful if you're routing for a speedrun. If you're just playing
+casually, you can ignore it.
+
+The last thing on this tab is the two boxes at the bottom right, 'Seed index'
+and 'Seed value'. If you're not going to change or look at the seed in memory at
+all, you can skip down to NOTES and ignore this bit.
+
+The actual value of the seed in memory doesn't go up 0, 1, 2, etc., it jumps
+around seemingly random numbers. Then we just call the initial seed seed/frame
+0, the next one seed/frame 1, and so on. The purpose of these two boxes is to
+allow you to convert between these representations. Seed index means the simpler
+values going 0, 1, 2, etc., while seed value means the true seed value. Type in
+one of the boxes and the correct number for the other box will appear
+automatically. Note the seed index box expects a base 10 number while the seed
+value box expects base 16.
+
+NOTES: This all fails if the AI is allowed to make random decisions. It's easy
+to avoid that by always playing monsters face-up, playing a monster turn 1, and
+then never giving up field control (so never letting them fuse or use magics).
+If your opponent is a low mage or Neku and they change the field to their
+desired one, then it's okay since this is not a random decision. To specify all
+the AI's random decisions here would take too long, but if you follow the above
+then you'll avoid them 99.9% of the time.
+
+Also, the only magics this handles are field spells, equips, and traps. There is
+(at least currently) no way for this program to handle Dark Hole, Raigeki,
+Spellbinding Circle, etc.
+
+Lastly, if you're not on English then a small modification needs to be made.
+This is also true of the script. There is a video by GFC on how to fix this
+for the script at https://youtu.be/hVvsBRAwdF8 where you slightly modify the
+AnimationDatabase.db file. This program also uses a copy of that file, and the
+same fix will work here.
+
+Starter deck search
+===================
+
+This lets you search through the starter decks. Mainly useful for routing
+speedruns.
+
+Pick a starting seed and number of seeds (up to 50000) just like using the
+script, a minimum number of dragons and thunders, and what magics you want the
+deck to have. The magics can be left blank if you don't care about them. If you
+want the deck to have specific cards in it beyond the magics, you can tick them
+in the 'Other required cards' box below. Then click 'Find decks' and the list of
+seeds giving decks you want appears.
+
+If there are no matches, the 'Deck listing' box will say 'No decks found'.
+Otherwise you can click on specific seeds in the 'Valid decks' box and then the
+cards in that deck will appear.
