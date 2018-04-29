@@ -49,9 +49,12 @@ SA Tec drops will find this useful.
 You will want to find a good seed to try getting your chosen drop on and how to
 draw the cards you want using the script and the method shown by GFC in his
 video. Once you have that, enter the appropriate duelist, rank, desired drop,
-and starting seed. Leave 'From duel start?' ticked; if anyone really struggles
-to get a drop and is looking for another way to make a seed work then I can
-write on what that does and how it can help.
+and starting seed. Leave 'From duel start?' ticked by default. What it does is
+take into account the RNG changes for deck shuffling and AI deck generation at
+the start of a duel. However, if you want to do something the program doesn't
+have an option for (like Raigeki), then you can play the duel up to then, find
+the seed with an emu like BizHawk, then enter that in and route out the duel
+from that point onwards.
 
 Now you need to specify what happens in a duel that affects the RNG. The events
 available to you are on the left just below the 'From duel start?' checkbox.
@@ -63,7 +66,11 @@ button to remove it.
 The options for an event will appear in the Options box. Hopefully they're
 self-explanatory enough. One note is anything that asks about if an event is
 needed is asking if you must do it or if you can choose to do it or not, e.g.,
-activating a field spell when you've used enough to get an A Tec.
+activating a field spell when you've used enough to get an A Tec. It is also
+useful to know that the option to set a battle to an AI battle stops the
+program from trying to use a 3d battle there. This can be helpful if you want
+to try and swap a quick 3d battle and a non-3d battle for instance (something
+that doesn't always work simply).
 
 Once your events and options are all set up you click 'Find manip' and in the
 'Fastest manip' box the program will tell you the fastest way to play a duel
