@@ -32,8 +32,8 @@ enum class Choice {
     fieldForest, fieldMount, fieldSogen,
     fieldUmi, fieldWaste, fieldYami,
     atkDirectHigh, atkDirectLow,
-    atkNorm, atkDamLow, atkDamHigh,
-    atkGsNorm, atkGsDamLow, atkGsDamHigh,
+    atkNorm, atkDamHigh, atkDamLow,
+    atkGsNorm, atkGsDamHigh, atkGsDamLow,
     atkQuick3d, atkSpawn3d, atkGsQuick3d, atkGsSpawn3d,
     trap, emptyChoice
 };

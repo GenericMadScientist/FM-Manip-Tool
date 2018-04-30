@@ -52,12 +52,12 @@ std::vector<Choice> directs()
 
 std::vector<Choice> atks()
 {
-    return choiceRange(24, 26);
+    return {Choice::atkNorm, Choice::atkDamLow, Choice::atkDamHigh};
 }
 
 std::vector<Choice> gsAtks()
 {
-    return choiceRange(27, 29);
+    return {Choice::atkGsNorm, Choice::atkGsDamLow, Choice::atkGsDamHigh};
 }
 
 std::vector<Choice> atks3d()
